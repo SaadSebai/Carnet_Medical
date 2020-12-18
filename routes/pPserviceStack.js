@@ -1,0 +1,29 @@
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import Header from '../Shared/header';
+import PPservice from '../screens/pPservice';
+
+const Stack = createStackNavigator();
+
+export default Navigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#e0d6d3',
+        height: 80,
+      },
+      headerTintColor: '#333',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }}>
+
+        <Stack.Screen name="PPservice" component={ PPservice } options={({navigation}) => { 
+            return(
+                {headerTitle: () => <Header navigation={navigation} title="Plus proche service" />}
+            )
+        }} ></Stack.Screen>
+        <Stack.Screen name="Map" component={ Map } options={{title:"Map"}} ></Stack.Screen>
+    </Stack.Navigator>
+  );
+}
